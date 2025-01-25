@@ -1,9 +1,12 @@
 from flask import Flask, request, jsonify
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 import os
+from flask_cors import CORS
 
 # Initialize Flask app
 app = Flask(__name__)
+CORS(app)
+
 api_token = os.getenv("HF_API_TOKEN")
 tokenizer = AutoTokenizer.from_pretrained("arya123321/t5_finetuned",use_auth_token=api_token)
 model = AutoModelForSeq2SeqLM.from_pretrained("arya123321/t5_finetuned",  use_auth_token=api_token)
