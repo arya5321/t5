@@ -5,8 +5,8 @@ import os
 # Initialize Flask app
 app = Flask(__name__)
 api_token = os.getenv("HF_API_TOKEN")
-tokenizer = AutoTokenizer.from_pretrained("arya123321/t5_finetuned",use_auth_token=HF_API_TOKEN)
-model = AutoModelForSeq2SeqLM.from_pretrained("arya123321/t5_finetuned",  use_auth_token=HF_API_TOKEN)
+tokenizer = AutoTokenizer.from_pretrained("arya123321/t5_finetuned",use_auth_token=api_token)
+model = AutoModelForSeq2SeqLM.from_pretrained("arya123321/t5_finetuned",  use_auth_token=api_token)
 
 # Load model and tokenizer globally
 tokenizer = AutoTokenizer.from_pretrained("arya123321/t5_finetuned")
